@@ -5,14 +5,14 @@ on:
     - cron: '0 0 * * *'
   workflow_dispatch:
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+permissions:
+  contents: write
 
 jobs:
   update-activity:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
+      - name: Checkout Current Repository
         uses: actions/checkout@v4
 
       - name: Generate Report
@@ -21,10 +21,24 @@ jobs:
         with:
           token: ${{ secrets.ORG_STATS_TOKEN }}
           organization: 'rootworkspace'
-      
-      - name: Upload Artifacts
-        uses: actions/upload-artifact@v4
+
+      - name: Clone Stats Repository
+        run: |
+          git clone https://x-access-token:${{ secrets.ORG_STATS_TOKEN }}@github.com/rootworkspace/contribution-stats.git stats_repo
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
         with:
-          name: reports
-          path: |
-            report.json
+          python-version: '3.x'
+
+      - name: Generate SVG Graph
+        run: |
+          mv report.json stats_repo/
+          python3 main.py
+      - name: Commit and Push to Stats Repo
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add contribution_graph.svg
+          git commit -m "docs: update activity stats" || echo "No changes to commit"
+          git push
