@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Generate Report
-        uses: rootworkspace/user-activity-report
+        uses: rootworkspace/user-activity-report@main
         id: report
         with:
           GITHUB_TOKEN: ${{ secrets.ORG_STATS_TOKEN }}
