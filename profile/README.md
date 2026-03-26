@@ -20,7 +20,7 @@
 We’re an independent group and a community focused on hardware hacking, cybersecurity, and software development — creating tools, resources, and products for tech enthusiasts.
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=arduino,raspberrypi,c,cpp,rust,cmake,bash,linux,javascript,ts,react,vite,docker,cloudflare,git&perline=15"/>
+  <img src="https://skillicons.dev/icons?i=arduino,raspberrypi,c,cpp,rust,cmake,bash,linux,javascript,ts,react,vite,docker,cloudflare,git&perline=15" />
 </p>
 
 ---
@@ -36,5 +36,12 @@ We’re an independent group and a community focused on hardware hacking, cybers
 </div>
 
 <p align="center">
-  <img src="https://count.getloli.com/@root-workspace?name=root-workspace&theme=rule34&padding=2&offset=0&align=top&scale=1&pixelated=1&darkmode=0" alt="Workspace views" />
+  <img src="https://count.getloli.com/@root-workspace?name=root-workspace&theme=rule34&padding=2&offset=0&align=top&scale=1&pixelated=1&darkmode=0" />
 </p>
+
+---
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/rootworkspace/.github/refs/heads/main/contribution_graph.svg" />
+</p>
+
