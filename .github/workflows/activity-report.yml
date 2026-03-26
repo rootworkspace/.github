@@ -1,0 +1,38 @@
+name: 'Monthly activity report'
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-activity:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Calculate Rolling Dates
+        id: dates
+        run: |
+          SINCE=$(date -d "31 days ago" +%Y-%m-%dT%H:%M:%SZ)
+          UNTIL=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+          echo "since=$SINCE" >> $GITHUB_OUTPUT
+          echo "until=$UNTIL" >> $GITHUB_OUTPUT
+
+      - name: Generate Report
+        uses: sorekz/user-activity-report@v1
+        id: report
+        with:
+          token: ${{ secrets.ORG_STATS_TOKEN }}
+          organization: 'root-workspace'
+          since: ${{ steps.dates.outputs.since }}
+          until: ${{ steps.dates.outputs.until }}
+      
+      - name: Upload Activity Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: monthly-activity-report
+          path: |
+            *.csv
+            *.json
