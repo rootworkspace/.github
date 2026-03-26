@@ -1,4 +1,4 @@
-name: 'Monthly activity report'
+name: 'Contribution stats report'
 
 on:
   schedule:
