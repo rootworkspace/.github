@@ -33,8 +33,8 @@ jobs:
 
       - name: Generate SVG Graph
         run: |
-          mv report.json stats_repo/
           python3 stats_repo/main.py
+          
       - name: Commit and Push to Stats Repo
         run: |
           git config --global user.name "github-actions[bot]"
