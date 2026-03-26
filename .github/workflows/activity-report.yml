@@ -31,13 +31,13 @@ jobs:
           organization: 'rootworkspace'
           since: ${{ steps.dates.outputs.since }}
           until: ${{ steps.dates.outputs.until }}
-          create-json: 'report.json'
-          create-csv: 'report.csv'
+          create-json: data.json
+          create-csv: data.csv
       
-      - name: Upload Activity Report
-        uses: actions/upload-artifact@v4
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v3
         with:
-          name: monthly-activity-report
+          name: reports
           path: |
-            *.csv
-            *.json
+            data.json
+            data.csv
