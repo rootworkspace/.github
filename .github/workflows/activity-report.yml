@@ -19,12 +19,12 @@ jobs:
         uses: rootworkspace/user-activity-report@main
         id: report
         with:
-          GITHUB_TOKEN: ${{ secrets.ORG_STATS_TOKEN }}
-          GITHUB_ORGANIZATION: 'rootworkspace'
+          token: ${{ secrets.ORG_STATS_TOKEN }}
+          organization: 'rootworkspace'
       
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: reports
           path: |
-            data.json
+            report.json
