@@ -5,6 +5,9 @@ on:
     - cron: '0 0 * * *'
   workflow_dispatch:
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   update-activity:
     runs-on: ubuntu-latest
@@ -28,6 +31,8 @@ jobs:
           organization: 'rootworkspace'
           since: ${{ steps.dates.outputs.since }}
           until: ${{ steps.dates.outputs.until }}
+          create-json: 'report.json'
+          create-csv: 'report.csv'
       
       - name: Upload Activity Report
         uses: actions/upload-artifact@v4
