@@ -36,12 +36,11 @@ We’re an independent group and a community focused on hardware hacking, cybers
 </div>
 
 <p align="center">
-  <img src="https://count.getloli.com/@root-workspace?name=root-workspace&theme=rule34&padding=2&offset=0&align=top&scale=1&pixelated=1&darkmode=0" />
+  <img src="https://raw.githubusercontent.com/rootworkspace/.github/refs/heads/main/contribution_graph.svg" />
 </p>
 
 ---
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/rootworkspace/.github/refs/heads/main/contribution_graph.svg" />
+  <img src="https://count.getloli.com/@root-workspace?name=root-workspace&theme=rule34&padding=2&offset=0&align=top&scale=1&pixelated=1&darkmode=0" />
 </p>
-
