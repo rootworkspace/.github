@@ -24,15 +24,11 @@ jobs:
           echo "until=$UNTIL" >> $GITHUB_OUTPUT
 
       - name: Generate Report
-        uses: sorekz/user-activity-report@v1
+        uses: rootworkspace/user-activity-report
         id: report
         with:
-          token: ${{ secrets.ORG_STATS_TOKEN }}
-          organization: 'rootworkspace'
-          since: ${{ steps.dates.outputs.since }}
-          until: ${{ steps.dates.outputs.until }}
-          create-json: data.json
-          create-csv: data.csv
+          GITHUB_TOKEN: ${{ secrets.ORG_STATS_TOKEN }}
+          GITHUB_ORGANIZATION: 'rootworkspace'
       
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
