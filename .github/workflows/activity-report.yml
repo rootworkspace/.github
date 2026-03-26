@@ -15,14 +15,6 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Calculate Rolling Dates
-        id: dates
-        run: |
-          SINCE=$(date -d "31 days ago" +%Y-%m-%dT%H:%M:%SZ)
-          UNTIL=$(date -u +%Y-%m-%dT%H:%M:%SZ)
-          echo "since=$SINCE" >> $GITHUB_OUTPUT
-          echo "until=$UNTIL" >> $GITHUB_OUTPUT
-
       - name: Generate Report
         uses: rootworkspace/user-activity-report
         id: report
