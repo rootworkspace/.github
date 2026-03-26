@@ -36,4 +36,3 @@ jobs:
           name: reports
           path: |
             data.json
-            data.csv
