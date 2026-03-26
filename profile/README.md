@@ -42,5 +42,5 @@ We’re an independent group and a community focused on hardware hacking, cybers
 ---
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/rootworkspace/.github/refs/heads/main/contribution_graph.svg" />
+  <img src="https://github.com/rootworkspace/.github/blob/main/contribution_graph.svg" />
 </p>
